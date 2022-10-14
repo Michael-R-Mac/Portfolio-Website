@@ -1,13 +1,12 @@
 :root {
-  --primary-color: #000000;
+  --primary-color: #000;
   --secondary-color: #f8f8f8;
   --dark-grey: #3c3c3c;
-  --light-grey: #ffffff;
-  --grey: #D8D8D8;
+  --light-grey: #fff;
+  --grey: #d8d8d8;
   --light-blue: #489c79;
-  --blue: #0000ff;
-  --red: #ff0000;
-
+  --blue: #00ff;
+  --red: #ff00;
 }
 
 * {
@@ -15,7 +14,7 @@
 }
 
 body {
-  background-color:  	var(--secondary-color);
+  background-color: var(--secondary-color);
   font-family: "Montserrat", sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -32,7 +31,7 @@ a { /* normal link */
 }
 
 a:visited { /* visited link */
-  color:  var(--dark-grey);
+  color: var(--dark-grey);
 }
 
 a:hover,
@@ -44,18 +43,15 @@ a:active { /* selected link */
   color: var(--light-blue);
 }
 
-button
-.button {
+button.button {
   /* overwrites browser defaults and resets the border */
   border: none;
-  /* takes the font from the outer container, body */
-  font-family: inherit;
+  font-family: inherit; /* takes the font from the outer container, body */
   background-color: var(--primary-color);
   color: var(--light-grey);
   padding: 10px;
   border-radius: 5px;
-  /* gives the button a bottom border with a width of 1px, a type of solid, and a color in RGBA format */
-  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);  /* gives the button a bottom border with a width of 1px, a type of solid, and a color in RGBA format */
   transition: 0.2s opacity;
 }
 
@@ -65,8 +61,7 @@ button:focus
 .button:focus {
   /* on hover or focus turn the mouse to a hand pointer */
   cursor: pointer;
-  /* reduces the opacity of the button to 80% */
-  opacity: 0.8;
+  opacity: 0.8; /* reduces the opacity of the button to 80% */
 }
 
 .navigation-list__item--active {
@@ -81,7 +76,7 @@ button:focus
   border-radius: 50%;
 }
 
-.page-footer { /* clear floating, center and space the footer*/
+.page-footer { /* clear floating, center and space the footer */
   clear: both;
   display: flex;
   flex-direction: column;
@@ -123,22 +118,23 @@ button:focus
   display: inline-block;
   width: 33%;
 }
-/* end grid fallback, next if suported will override */
 
+/* end grid fallback, next if suported will override */
 @supports (display: grid) {
   .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
     margin: 0;
-
   }
+
   .grid__item {
     background-color: var(--grey);
     width: auto;
     min-height: auto;
     margin: 0;
   }
+
   .grid__item:last-child {
     grid-column: 3 / 3;
     grid-row: 1 / 3;
@@ -154,19 +150,23 @@ button:focus
     grid-template-columns: 1fr;
   }
 }
-@media all and (min-width: 500px) and (max-width: 750px){
+
+@media all and (min-width: 500px) and (max-width: 750px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
 }
+
 @media all and (max-width: 750px) {
   .grid {
     grid-gap: 10px;
   }
+
   .grid__item:last-child {
     grid-column: auto / auto;
     grid-row: auto / auto;
   }
+
   h1 {
     font-size: 22px;
   }
@@ -187,6 +187,7 @@ button:focus
   0% {
     fill: var(--red);
   }
+
   100% {
     fill: var(--blue);
   }
